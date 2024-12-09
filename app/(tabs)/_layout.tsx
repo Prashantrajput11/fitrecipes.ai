@@ -1,19 +1,30 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { Tabs } from "expo-router";
+import { Redirect, Tabs } from "expo-router";
 import { TabBarIcon } from "../../components/TabBarIcon";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 const TabsLayout = () => {
+	const user = true;
+
 	return (
 		<Tabs
 			screenOptions={{ tabBarActiveTintColor: "orange", headerShown: false }}
 		>
 			<Tabs.Screen
-				name="index"
+				name="mydiet"
 				options={{
 					headerTitle: "For you",
-					title: "New Event",
+					title: "My Diets",
 					tabBarIcon: ({ color }) => <TabBarIcon name="plus" color={color} />,
+				}}
+			/>
+			<Tabs.Screen
+				name="index"
+				options={{
+					headerTitle: "Tools",
+					title: "Explore Tools",
+					tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
 				}}
 			/>
 			<Tabs.Screen
